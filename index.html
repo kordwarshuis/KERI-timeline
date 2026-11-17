@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The KERI Timeline | KERI Foundation</title>
+    <meta name="description"
+        content="A sourced timeline of the development of KERI, from RAET in 2013 to open standards, state law and open infrastructure in 2026.">
+    <link rel="icon" type="image/png" sizes="32x32" href="/custom/img/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --ink: #060b6f;
+            --muted: #2e3a7a;
+            --soft: #5b6390;
+            --bg: #fdefde;
+            --panel: #f4f0e8;
+            --stone: #e8e6de;
+            --accent: #986c32;
+            --link: #0450a8;
+            --on-ink: #ffffff;
+            --surface: #f8ead8;
+            --surface2: #f3dcc0;
+            --card: #fffaf2;
+            --line: #d9c4a3;
+            --heading-font: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+            --body-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            --c-origins: #6b6f7a;
+            --c-papers: #060b6f;
+            --c-specs: #0450a8;
+            --c-code: #5f7c2f;
+            --c-adoption: #b4472e;
+            --c-law: #7b3f8c;
+            --c-community: #b9831c;
+            --c-outlook: #23807f;
+
+            --date-col: 148px;
+            --rail-col: 44px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 175px;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--body-font);
+            font-size: 16px;
+            line-height: 1.55;
+        }
+
+        a {
+            color: var(--link);
+        }
+
+        .wrap {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ---------- Header ---------- */
+        .masthead {
+            padding: 56px 0 28px;
+        }
+
+        .kicker {
+            font-family: var(--heading-font);
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin: 0 0 14px;
+        }
+
+        .kicker a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        h1 {
+            font-family: var(--heading-font);
+            font-weight: 800;
+            font-size: clamp(38px, 6vw, 64px);
+            line-height: 1.02;
+            letter-spacing: -0.02em;
+            margin: 0 0 18px;
+        }
+
+        .lede {
+            font-size: clamp(17px, 2vw, 20px);
+            max-width: 720px;
+            color: var(--muted);
+            margin: 0 0 30px;
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            border-top: 2px solid var(--ink);
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .stats li {
+            padding: 14px 32px 0 0;
+            margin-right: 32px;
+            border-right: 1px solid var(--line);
+        }
+
+        .stats li:last-child {
+            border-right: 0;
+            margin-right: 0;
+        }
+
+        .stats b {
+            display: block;
+            font-family: var(--heading-font);
+            font-weight: 800;
+            font-size: 30px;
+            line-height: 1.1;
+        }
+
+        .stats span {
+            font-size: 13px;
+            color: var(--soft);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* ---------- Overview strip ---------- */
+        .overview {
+            margin: 34px 0 10px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 20px 20px 14px;
+        }
+
+        .overview h2 {
+            font-family: var(--heading-font);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--soft);
+            margin: 0 0 12px;
+        }
+
+        .ov-grid {
+            display: grid;
+            grid-template-columns: repeat(var(--years), minmax(0, 1fr));
+            column-gap: 2px;
+        }
+
+        .ov-col {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 4px;
+            height: 196px;
+            padding-bottom: 8px;
+            border: 0;
+            background: none;
+            cursor: pointer;
+            border-radius: 8px 8px 0 0;
+            font: inherit;
+            color: inherit;
+        }
+
+        .ov-col:hover,
+        .ov-col:focus-visible {
+            background: var(--surface);
+            outline: none;
+        }
+
+        .ov-col:disabled {
+            cursor: default;
+            background: none;
+        }
+
+        .ov-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--c);
+            flex: none;
+        }
+
+        .ov-dot.big {
+            width: 15px;
+            height: 15px;
+        }
+
+        .ov-dot.open {
+            background: transparent;
+            border: 2px solid var(--c);
+        }
+
+        .ov-year {
+            text-align: center;
+            font-family: var(--heading-font);
+            font-weight: 700;
+            font-size: 12px;
+            padding: 6px 0 8px;
+            border-top: 2px solid var(--ink);
+            color: var(--ink);
+        }
+
+        .ov-era {
+            font-size: 11.5px;
+            line-height: 1.25;
+            padding: 7px 8px;
+            color: var(--muted);
+            border-left: 2px solid var(--accent);
+            background: var(--surface);
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .ov-era:nth-child(even) {
+            background: var(--surface2);
+        }
+
+        .ov-era:hover {
+            color: var(--ink);
+            text-decoration: underline;
+        }
+
+        /* ---------- Toolbar ---------- */
+        .toolbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: var(--bg);
+            border-bottom: 1px solid var(--line);
+            padding: 14px 0 12px;
+            margin-top: 18px;
+        }
+
+        .toolbar-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toolbar-row+.toolbar-row {
+            margin-top: 10px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font: inherit;
+            font-size: 13.5px;
+            font-weight: 600;
+            padding: 6px 12px 6px 10px;
+            border-radius: 999px;
+            border: 1.5px solid var(--line);
+            background: transparent;
+            color: var(--soft);
+            cursor: pointer;
+            transition: background 0.12s, color 0.12s, border-color 0.12s;
+        }
+
+        .chip::before {
+            content: '';
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--c, var(--soft));
+            opacity: 0.35;
+        }
+
+        .chip[aria-pressed="true"] {
+            background: var(--card);
+            border-color: var(--c, var(--ink));
+            color: var(--ink);
+        }
+
+        .chip[aria-pressed="true"]::before {
+            opacity: 1;
+        }
+
+        .chip:focus-visible,
+        .switch:focus-within,
+        .search:focus {
+            outline: 2px solid var(--link);
+            outline-offset: 2px;
+        }
+
+        .chip.plain::before {
+            display: none;
+        }
+
+        .chip.plain {
+            padding-left: 12px;
+        }
+
+        .spacer {
+            flex: 1;
+        }
+
+        .switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13.5px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            padding: 4px 6px;
+            user-select: none;
+        }
+
+        .switch input {
+            accent-color: var(--ink);
+            width: 16px;
+            height: 16px;
+            margin: 0;
+        }
+
+        .search {
+            font: inherit;
+            font-size: 14px;
+            padding: 7px 12px;
+            border: 1.5px solid var(--line);
+            border-radius: 999px;
+            background: var(--card);
+            color: var(--ink);
+            width: 220px;
+            max-width: 100%;
+        }
+
+        .count {
+            font-size: 13px;
+            color: var(--soft);
+        }
+
+        /* ---------- Eras ---------- */
+        .era {
+            padding-top: 56px;
+        }
+
+        .era-head {
+            display: grid;
+            grid-template-columns: var(--date-col) var(--rail-col) 1fr;
+            align-items: end;
+        }
+
+        .era-range {
+            font-family: var(--heading-font);
+            font-weight: 800;
+            font-size: 15px;
+            text-align: right;
+            color: var(--accent);
+            padding-bottom: 6px;
+            letter-spacing: 0.02em;
+        }
+
+        .era-title {
+            grid-column: 3;
+        }
+
+        .era-title h2 {
+            font-family: var(--heading-font);
+            font-weight: 800;
+            font-size: clamp(24px, 3.4vw, 34px);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            margin: 0 0 8px;
+        }
+
+        .era-title p {
+            margin: 0;
+            max-width: 620px;
+            color: var(--muted);
+        }
+
+        .events {
+            position: relative;
+            margin-top: 26px;
+        }
+
+        .events::before {
+            content: '';
+            position: absolute;
+            left: calc(var(--date-col) + var(--rail-col) / 2 - 1px);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--line);
+        }
+
+        /* ---------- Event ---------- */
+        .event {
+            display: grid;
+            grid-template-columns: var(--date-col) var(--rail-col) 1fr;
+            padding: 0 0 22px;
+            position: relative;
+        }
+
+        .ev-date {
+            text-align: right;
+            font-family: var(--heading-font);
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1.3;
+            padding-top: 15px;
+            color: var(--muted);
+        }
+
+        .ev-date .yr {
+            display: block;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--ink);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .ev-date .d-narrow {
+            display: none;
+        }
+
+        .ev-node {
+            position: relative;
+        }
+
+        .ev-node::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 18px;
+            width: 12px;
+            height: 12px;
+            margin-left: -6px;
+            border-radius: 50%;
+            background: var(--bg);
+            border: 3px solid var(--c);
+        }
+
+        .imp-3 .ev-node::after {
+            width: 20px;
+            height: 20px;
+            margin-left: -10px;
+            top: 14px;
+            background: var(--c);
+            border: 4px solid var(--bg);
+            outline: 2px solid var(--c);
+        }
+
+        .imp-1 .ev-node::after {
+            width: 8px;
+            height: 8px;
+            margin-left: -4px;
+            top: 16px;
+            border-width: 2px;
+        }
+
+        .st-expected .ev-node::after,
+        .st-forecast .ev-node::after {
+            background: var(--bg);
+            border-style: dashed;
+            outline: none;
+            border-width: 2px;
+            border-color: var(--c);
+        }
+
+        .ev-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 14px 18px 14px;
+            min-width: 0;
+        }
+
+        .imp-3 .ev-card {
+            border-left: 5px solid var(--c);
+            padding: 18px 22px 18px 20px;
+        }
+
+        .imp-1 .ev-card {
+            background: transparent;
+            border-color: transparent;
+            padding: 10px 0 0 4px;
+        }
+
+        .st-expected .ev-card,
+        .st-forecast .ev-card {
+            border-style: dashed;
+            border-color: var(--c);
+            background: transparent;
+        }
+
+        .ev-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--c);
+            margin-bottom: 4px;
+        }
+
+        .badge {
+            letter-spacing: 0.06em;
+            border: 1px solid currentColor;
+            border-radius: 4px;
+            padding: 0 6px;
+            font-size: 10.5px;
+        }
+
+        .ev-title {
+            font-family: var(--heading-font);
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.25;
+            margin: 0 0 6px;
+        }
+
+        .imp-3 .ev-title {
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+        }
+
+        .imp-1 .ev-title {
+            font-size: 16px;
+        }
+
+        .ev-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .ev-title a:hover {
+            text-decoration: underline;
+        }
+
+        .ev-summary {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15.5px;
+        }
+
+        .imp-1 .ev-summary {
+            font-size: 14.5px;
+        }
+
+        .ev-quote {
+            margin: 12px 0 0;
+            padding: 2px 0 2px 14px;
+            border-left: 3px solid var(--c);
+            font-family: var(--heading-font);
+            font-style: italic;
+            font-weight: 600;
+            font-size: 15.5px;
+            color: var(--ink);
+        }
+
+        .ev-quote cite {
+            display: block;
+            font-style: normal;
+            font-family: var(--body-font);
+            font-weight: 400;
+            font-size: 12.5px;
+            color: var(--soft);
+            margin-top: 3px;
+        }
+
+        .ev-note {
+            margin: 12px 0 0;
+            padding: 9px 12px;
+            background: var(--surface2);
+            border-radius: 8px;
+            font-size: 13.5px;
+            color: var(--muted);
+        }
+
+        .ev-note b {
+            color: var(--ink);
+        }
+
+        details.ev-sources {
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        details.ev-sources summary {
+            cursor: pointer;
+            color: var(--soft);
+            font-weight: 600;
+            width: fit-content;
+            border-radius: 4px;
+        }
+
+        details.ev-sources summary:hover {
+            color: var(--ink);
+        }
+
+        details.ev-sources ul {
+            margin: 8px 0 0;
+            padding: 0 0 0 18px;
+            color: var(--muted);
+        }
+
+        details.ev-sources li {
+            margin-bottom: 4px;
+        }
+
+        details.ev-sources .ts {
+            font-variant-numeric: tabular-nums;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        details.ev-sources .src-note {
+            color: var(--soft);
+        }
+
+        .empty {
+            padding: 60px 0;
+            text-align: center;
+            color: var(--soft);
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            margin-top: 72px;
+            padding: 30px 0 60px;
+            border-top: 2px solid var(--ink);
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        footer h2 {
+            font-family: var(--heading-font);
+            font-size: 16px;
+            margin: 0 0 8px;
+            color: var(--ink);
+        }
+
+        footer p {
+            max-width: 760px;
+            margin: 0 0 10px;
+        }
+
+        footer ul {
+            margin: 6px 0 14px;
+            padding-left: 18px;
+            columns: 2;
+            column-gap: 40px;
+        }
+
+        footer li {
+            break-inside: avoid;
+            margin-bottom: 4px;
+        }
+
+        code {
+            font-size: 0.92em;
+            background: var(--surface2);
+            padding: 1px 5px;
+            border-radius: 4px;
+            overflow-wrap: anywhere;
+        }
+
+        /* ---------- Small screens ---------- */
+        @media (max-width: 760px) {
+            :root {
+                --date-col: 0px;
+                --rail-col: 46px;
+            }
+
+            html {
+                scroll-padding-top: 20px;
+            }
+
+            .toolbar {
+                position: static;
+            }
+
+            .era-head,
+            .event {
+                grid-template-columns: var(--rail-col) 1fr;
+            }
+
+            .era-range {
+                grid-column: 2;
+                text-align: left;
+            }
+
+            .era-title {
+                grid-column: 2;
+            }
+
+            .ev-date {
+                grid-column: 2;
+                grid-row: 1;
+                text-align: left;
+                padding: 0 0 6px;
+            }
+
+            .ev-date .yr,
+            .ev-date .d-wide {
+                display: none;
+            }
+
+            .ev-date .d-narrow {
+                display: inline;
+            }
+
+            .ev-node {
+                grid-column: 1;
+                grid-row: 1 / span 2;
+            }
+
+            .ev-node::after {
+                top: 4px;
+            }
+
+            .imp-3 .ev-node::after {
+                top: 0;
+            }
+
+            .imp-1 .ev-node::after {
+                top: 6px;
+            }
+
+            .ev-card {
+                grid-column: 2;
+            }
+
+            .events::before {
+                left: calc(var(--rail-col) / 2 - 1px);
+            }
+
+            .ov-col {
+                height: 130px;
+            }
+
+            .ov-dot {
+                width: 6px;
+                height: 6px;
+            }
+
+            .ov-dot.big {
+                width: 10px;
+                height: 10px;
+            }
+
+            .ov-year {
+                font-size: 9px;
+            }
+
+            .ov-era {
+                font-size: 0;
+                padding: 4px 0;
+            }
+
+            .stats li {
+                padding-right: 28px;
+                margin-right: 0;
+                border-right: 0;
+            }
+
+            .stats b {
+                font-size: 24px;
+            }
+
+            footer ul {
+                columns: 1;
+            }
+        }
+
+        @media print {
+
+            .toolbar,
+            .overview {
+                display: none;
+            }
+
+            details.ev-sources>ul {
+                display: block;
+            }
+
+            .event {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="masthead">
+            <p class="kicker"><a href="/">KERI Foundation</a></p>
+            <h1 id="title">The KERI Timeline</h1>
+            <p class="lede" id="subtitle"></p>
+            <ul class="stats" id="stats"></ul>
+        </header>
+
+        <section class="overview" aria-label="Events per year">
+            <h2>Events per year. Large dots are milestones; select a year to jump to it</h2>
+            <div class="ov-grid" id="ov-dots"></div>
+            <div class="ov-grid" id="ov-years"></div>
+            <div class="ov-grid" id="ov-eras"></div>
+        </section>
+    </div>
+
+    <div class="toolbar">
+        <div class="wrap">
+            <div class="toolbar-row" id="chips" role="group" aria-label="Filter by category"></div>
+            <div class="toolbar-row">
+                <label class="switch"><input type="checkbox" id="milestones"> Milestones only</label>
+                <span class="count" id="count" aria-live="polite"></span>
+                <span class="spacer"></span>
+                <input class="search" id="search" type="search" placeholder="Search the timeline"
+                    aria-label="Search the timeline">
+            </div>
+        </div>
+    </div>
+
+    <main class="wrap" id="timeline"></main>
+
+    <div class="wrap">
+        <footer>
+            <h2>About this timeline</h2>
+            <p id="scope"></p>
+            <p>Every entry lists where it comes from. Talk references link to the moment in the recording when one is
+                published. Where sources disagree or a date is inferred, the entry carries a dating note.</p>
+            <ul id="source-list"></ul>
+            <p>Data: <a href="timeline.json">timeline.json</a> <span id="compiled"></span></p>
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            'use strict';
+
+            var state = { cats: new Set(), milestones: false, q: '' };
+            var data = null;
+
+            function el(tag, attrs, children) {
+                var node = document.createElement(tag);
+                if (attrs) {
+                    Object.keys(attrs).forEach(function (k) {
+                        var v = attrs[k];
+                        if (v === null || v === undefined || v === false) return;
+                        if (k === 'class') node.className = v;
+                        else if (k === 'text') node.textContent = v;
+                        else if (k === 'style') node.setAttribute('style', v);
+                        else if (k.slice(0, 2) === 'on') node.addEventListener(k.slice(2), v);
+                        else node.setAttribute(k, v);
+                    });
+                }
+                (children || []).forEach(function (c) {
+                    if (c === null || c === undefined || c === false) return;
+                    node.appendChild(typeof c === 'string' ? document.createTextNode(c) : c);
+                });
+                return node;
+            }
+
+            function yearOf(ev) { return parseInt(ev.date.slice(0, 4), 10); }
+
+            function seconds(at) {
+                var p = at.split(':').map(Number);
+                return p[0] * 3600 + p[1] * 60 + p[2];
+            }
+
+            function shortTime(at) {
+                return at.replace(/^00:/, '');
+            }
+
+            function catColor(id) { return 'var(--c-' + id + ')'; }
+
+            function matches(ev) {
+                if (!state.cats.has(ev.category)) return false;
+                if (state.milestones && ev.importance < 3) return false;
+                if (state.q) {
+                    var hay = (ev.title + ' ' + ev.summary + ' ' + (ev.quote || '') + ' ' + (ev.note || '') + ' ' + ev.display).toLowerCase();
+                    if (hay.indexOf(state.q) === -1) return false;
+                }
+                return true;
+            }
+
+            /* ----- header ----- */
+            function renderHeader() {
+                var m = data.meta;
+                document.getElementById('title').textContent = m.title;
+                document.getElementById('subtitle').textContent = m.subtitle;
+                document.getElementById('scope').textContent = m.scope;
+                document.getElementById('compiled').textContent = '· compiled ' + m.compiled;
+
+                var years = data.events.map(yearOf);
+                var done = data.events.filter(function (e) { return e.status === 'done'; });
+                var stats = [
+                    [Math.min.apply(null, years) + '–' + Math.max.apply(null, years), 'Span'],
+                    [data.events.length, 'Events'],
+                    [data.events.filter(function (e) { return e.importance === 3; }).length, 'Milestones'],
+                    [data.events.length - done.length, 'Still ahead'],
+                    [Object.keys(data.sources).length, 'Sources']
+                ];
+                var ul = document.getElementById('stats');
+                stats.forEach(function (s) {
+                    ul.appendChild(el('li', null, [el('b', { text: String(s[0]) }), el('span', { text: s[1] })]));
+                });
+
+                var sl = document.getElementById('source-list');
+                Object.keys(data.sources).forEach(function (k) {
+                    var s = data.sources[k];
+                    var li = el('li');
+                    if (s.youtubeId) {
+                        li.appendChild(el('a', { href: 'https://www.youtube.com/watch?v=' + s.youtubeId, target: '_blank', rel: 'noopener', text: s.label }));
+                    } else {
+                        li.appendChild(document.createTextNode(s.label));
+                    }
+                    sl.appendChild(li);
+                });
+            }
+
+            /* ----- chips ----- */
+            function renderChips() {
+                var box = document.getElementById('chips');
+                var all = el('button', {
+                    class: 'chip plain', type: 'button', 'aria-pressed': 'true', text: 'All',
+                    onclick: function () {
+                        var allOn = state.cats.size === data.categories.length;
+                        state.cats = new Set(allOn ? [] : data.categories.map(function (c) { return c.id; }));
+                        syncChips(); render();
+                    }
+                });
+                box.appendChild(all);
+                data.categories.forEach(function (c) {
+                    var n = data.events.filter(function (e) { return e.category === c.id; }).length;
+                    box.appendChild(el('button', {
+                        class: 'chip', type: 'button', 'data-cat': c.id, 'aria-pressed': 'true',
+                        title: c.description, style: '--c:' + catColor(c.id),
+                        text: c.label + ' ' + n,
+                        onclick: function () {
+                            /* first click on a full set isolates that category */
+                            if (state.cats.size === data.categories.length) state.cats = new Set([c.id]);
+                            else if (state.cats.has(c.id)) state.cats.delete(c.id);
+                            else state.cats.add(c.id);
+                            if (state.cats.size === 0) state.cats = new Set(data.categories.map(function (x) { return x.id; }));
+                            syncChips(); render();
+                        }
+                    }));
+                });
+            }
+
+            function syncChips() {
+                var chips = document.querySelectorAll('#chips .chip');
+                chips.forEach(function (ch) {
+                    var id = ch.getAttribute('data-cat');
+                    var on = id ? state.cats.has(id) : state.cats.size === data.categories.length;
+                    ch.setAttribute('aria-pressed', on ? 'true' : 'false');
+                });
+            }
+
+            /* ----- overview ----- */
+            function renderOverview(visible) {
+                var years = data.events.map(yearOf);
+                var min = Math.min.apply(null, years), max = Math.max.apply(null, years);
+                var n = max - min + 1;
+                var dots = document.getElementById('ov-dots');
+                var yrs = document.getElementById('ov-years');
+                var eras = document.getElementById('ov-eras');
+                [dots, yrs, eras].forEach(function (g) { g.textContent = ''; g.style.setProperty('--years', n); });
+
+                for (var y = min; y <= max; y++) {
+                    var evs = visible.filter(function (e) { return yearOf(e) === y; })
+                        .sort(function (a, b) { return b.importance - a.importance || a.date.localeCompare(b.date); });
+                    var col = el('button', {
+                        class: 'ov-col', type: 'button', 'data-year': y, disabled: evs.length ? null : 'disabled',
+                        'aria-label': y + ': ' + evs.length + ' events',
+                        onclick: (function (yy) {
+                            return function () {
+                                var t = document.querySelector('.event[data-year="' + yy + '"]');
+                                if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            };
+                        })(y)
+                    });
+                    evs.forEach(function (e) {
+                        col.appendChild(el('span', {
+                            class: 'ov-dot' + (e.importance === 3 ? ' big' : '') + (e.status !== 'done' ? ' open' : ''),
+                            style: '--c:' + catColor(e.category), title: e.display + ': ' + e.title
+                        }));
+                    });
+                    dots.appendChild(col);
+                    yrs.appendChild(el('div', { class: 'ov-year', text: String(y) }));
+                }
+                data.eras.forEach(function (era) {
+                    var from = parseInt(era.from, 10), to = parseInt(era.to, 10);
+                    eras.appendChild(el('a', {
+                        class: 'ov-era', href: '#era-' + era.id, text: era.label,
+                        style: 'grid-column:' + (from - min + 1) + ' / ' + (to - min + 2)
+                    }));
+                });
+            }
+
+            /* ----- events ----- */
+            function sourceItem(ref) {
+                var s = data.sources[ref.source] || { label: ref.source };
+                var li = el('li');
+                if (ref.at && s.youtubeId) {
+                    li.appendChild(el('a', {
+                        class: 'ts', target: '_blank', rel: 'noopener',
+                        href: 'https://www.youtube.com/watch?v=' + s.youtubeId + '&t=' + seconds(ref.at) + 's',
+                        text: shortTime(ref.at)
+                    }));
+                    li.appendChild(document.createTextNode(' · '));
+                } else if (ref.at) {
+                    li.appendChild(el('span', { class: 'ts', text: shortTime(ref.at) }));
+                    li.appendChild(document.createTextNode(' · '));
+                }
+                li.appendChild(document.createTextNode(s.label));
+                if (ref.note) li.appendChild(el('span', { class: 'src-note', text: ' ' + ref.note }));
+                return li;
+            }
+
+            function quoteSource(ev) {
+                var ref = (ev.sources || [])[0];
+                var s = ref && data.sources[ref.source];
+                return s ? s.label : '';
+            }
+
+            function eventNode(ev, showYear) {
+                var cat = data.categories.filter(function (c) { return c.id === ev.category; })[0];
+                var y = yearOf(ev);
+                var dateBits = [];
+                var rest = ev.display.replace(String(y), '').replace(/\s+/g, ' ').trim();
+                var wide;
+                if (!showYear) {
+                    /* later entries in the same year keep their full date so they read on their own */
+                    wide = ev.display;
+                } else if (ev.precision === 'range' || ev.precision === 'approx' || !rest) {
+                    wide = ev.display !== String(y) ? ev.display : '';
+                } else {
+                    wide = rest;
+                }
+                /* wide layout: big year plus remainder; narrow layout: the full date on one line */
+                if (showYear) dateBits.push(el('span', { class: 'yr', text: String(y) }));
+                if (wide) dateBits.push(el('span', { class: 'd-wide', text: wide }));
+                dateBits.push(el('span', { class: 'd-narrow', text: ev.display }));
+
+                var meta = el('div', { class: 'ev-meta' }, [
+                    el('span', { text: cat ? cat.label : ev.category }),
+                    ev.status === 'expected' ? el('span', { class: 'badge', text: 'Expected' }) : null,
+                    ev.status === 'forecast' ? el('span', { class: 'badge', text: 'Forecast' }) : null
+                ]);
+
+                var card = el('div', { class: 'ev-card' }, [
+                    meta,
+                    el('h3', { class: 'ev-title' }, [el('a', { href: '#' + ev.id, text: ev.title })]),
+                    el('p', { class: 'ev-summary', text: ev.summary }),
+                    ev.quote ? el('blockquote', { class: 'ev-quote' }, [
+                        document.createTextNode('“' + ev.quote + '”'),
+                        el('cite', { text: quoteSource(ev) })
+                    ]) : null,
+                    ev.note ? el('p', { class: 'ev-note' }, [el('b', { text: 'Dating note. ' }), document.createTextNode(ev.note)]) : null,
+                    el('details', { class: 'ev-sources' }, [
+                        el('summary', { text: 'Sources (' + ev.sources.length + ')' }),
+                        el('ul', null, ev.sources.map(sourceItem))
+                    ])
+                ]);
+
+                return el('article', {
+                    class: 'event imp-' + ev.importance + ' st-' + ev.status,
+                    id: ev.id, 'data-year': y, style: '--c:' + catColor(ev.category)
+                }, [
+                    el('div', { class: 'ev-date' }, dateBits),
+                    el('div', { class: 'ev-node' }),
+                    card
+                ]);
+            }
+
+            function render() {
+                var visible = data.events.filter(matches);
+                var root = document.getElementById('timeline');
+                root.textContent = '';
+                document.getElementById('count').textContent =
+                    visible.length === data.events.length
+                        ? data.events.length + ' events'
+                        : visible.length + ' of ' + data.events.length + ' events';
+
+                renderOverview(visible);
+
+                if (!visible.length) {
+                    root.appendChild(el('p', { class: 'empty', text: 'Nothing matches these filters.' }));
+                    return;
+                }
+
+                data.eras.forEach(function (era) {
+                    var evs = visible.filter(function (e) { return e.era === era.id; });
+                    if (!evs.length) return;
+                    var list = el('div', { class: 'events' });
+                    var lastYear = null;
+                    evs.forEach(function (ev) {
+                        var y = yearOf(ev);
+                        list.appendChild(eventNode(ev, y !== lastYear));
+                        lastYear = y;
+                    });
+                    root.appendChild(el('section', { class: 'era', id: 'era-' + era.id }, [
+                        el('div', { class: 'era-head' }, [
+                            el('div', { class: 'era-range', text: era.from + '–' + era.to }),
+                            el('div', { class: 'era-title' }, [
+                                el('h2', { text: era.label }),
+                                el('p', { text: era.description })
+                            ])
+                        ]),
+                        list
+                    ]));
+                });
+            }
+
+            function init(json) {
+                data = json;
+                data.events.sort(function (a, b) { return a.date.localeCompare(b.date); });
+                state.cats = new Set(data.categories.map(function (c) { return c.id; }));
+                renderHeader();
+                renderChips();
+                render();
+
+                document.getElementById('milestones').addEventListener('change', function (e) {
+                    state.milestones = e.target.checked; render();
+                });
+                document.getElementById('search').addEventListener('input', function (e) {
+                    state.q = e.target.value.trim().toLowerCase(); render();
+                });
+
+                if (location.hash) {
+                    var t = document.getElementById(location.hash.slice(1));
+                    if (t) t.scrollIntoView();
+                }
+            }
+
+            fetch('timeline.json', { cache: 'no-store' })
+                .then(function (r) {
+                    if (!r.ok) throw new Error('HTTP ' + r.status);
+                    return r.json();
+                })
+                .then(init)
+                .catch(function (err) {
+                    document.getElementById('timeline').appendChild(el('p', {
+                        class: 'empty',
+                        text: 'Could not load timeline.json (' + err.message + '). This page has to be served over http, for example with "python3 -m http.server" in the site root, because browsers block file:// requests.'
+                    }));
+                });
+        })();
+    </script>
+</body>
+
+</html>

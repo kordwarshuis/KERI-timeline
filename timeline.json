@@ -1,0 +1,1001 @@
+{
+  "meta": {
+    "title": "The KERI Timeline",
+    "subtitle": "How Key Event Receipt Infrastructure got from an unsolved key-management problem in 2013 to open standards, state law and open infrastructure in 2026.",
+    "compiled": "2026-11-16",
+    "scope": "Compiled from Samuel M. Smith's history talks at KERICONF26 (April 2026) and the KERI Mini Conference (November 2026), other recorded talks, and the scraped text corpus (Slack archive, white-paper repository, GLEIF, KERI Foundation and KERICONF sites).",
+    "quoteConvention": "A `quote` is taken from the first entry in that event's `sources`.",
+    "dateConvention": "`date` is a sortable ISO start date; when only a year or month is known it is padded with -01. `display` is the human-readable date and `precision` says how exact the source is (day, month, year, range, approx).",
+    "statusValues": {
+      "done": "Happened, according to the cited source.",
+      "expected": "Announced or scheduled in the source, outcome not in the corpus.",
+      "forecast": "A prediction or external deadline."
+    },
+    "importanceValues": {
+      "3": "Milestone",
+      "2": "Notable",
+      "1": "Detail"
+    }
+  },
+  "categories": [
+    { "id": "origins", "label": "Origins", "description": "Precursor work and the problems that led to KERI." },
+    { "id": "papers", "label": "White papers", "description": "Theory and design papers by Samuel M. Smith and co-authors." },
+    { "id": "specs", "label": "Specs & standards", "description": "IETF drafts, Trust over IP specifications, ISO." },
+    { "id": "code", "label": "Code & infrastructure", "description": "Implementations, wallets, witnesses, watchers." },
+    { "id": "adoption", "label": "Adoption", "description": "GLEIF vLEI, telecom, healthcare, Cardano and others." },
+    { "id": "law", "label": "Law & policy", "description": "Utah SEDI legislation and regulation." },
+    { "id": "community", "label": "Community", "description": "Working groups, the KERI Foundation, conferences." },
+    { "id": "outlook", "label": "Outlook", "description": "Scheduled events, deadlines and predictions." }
+  ],
+  "eras": [
+    {
+      "id": "search",
+      "label": "The search for persistent identity",
+      "from": "2013",
+      "to": "2017",
+      "description": "RAET, Open Reputation and Sovrin: every attempt runs into the same wall, key management and shared governance."
+    },
+    {
+      "id": "invention",
+      "label": "The way of KERI",
+      "from": "2018",
+      "to": "2020",
+      "description": "Pre-rotation, key event logs and the white papers. The claim that you do not need a blockchain for perpetual identity."
+    },
+    {
+      "id": "production",
+      "label": "From paper to production",
+      "from": "2021",
+      "to": "2022",
+      "description": "A community forms around the WebOfTrust repositories, specs go to IETF-draft form and GLEIF's vLEI goes live."
+    },
+    {
+      "id": "widening",
+      "label": "Widening the circle",
+      "from": "2023",
+      "to": "2025",
+      "description": "KERIA and Signify, did:webs, SPAC and TSP, Utah's privacy work, the ToIP working group and the KERI Foundation."
+    },
+    {
+      "id": "infrastructure",
+      "label": "The year of infrastructure",
+      "from": "2026",
+      "to": "2027",
+      "description": "Final v1.0 specifications, funded open infrastructure, SEDI in law, the first KERI conferences, and what comes next."
+    }
+  ],
+  "sources": {
+    "nov26-state": {
+      "label": "Samuel M. Smith, The state and the future of the KERI Suite (Mini Conference, 2 Nov 2026)",
+      "type": "talk",
+      "path": "confs/KERI/2026/nov/talks/2026-11-02-samuel-m-smith-1.srt",
+      "youtubeId": "KMieUSLQ4WA"
+    },
+    "apr26-state": {
+      "label": "Samuel Smith, State of the KERI Suite (KERICONF26, April 2026)",
+      "type": "talk",
+      "path": "confs/KERI/2026/apr/talks/Samuel Smith ｜ State of the KERI Suite ｜ KERI Conference 2026.srt",
+      "youtubeId": "S5MRx_fszOI"
+    },
+    "nov26-5w": {
+      "label": "Samuel M. Smith & Ryan Hansen, Progress report: the 5 W's of KERI (Mini Conference, 2 Nov 2026)",
+      "type": "talk",
+      "path": "confs/KERI/2026/nov/talks/2026-11-02-samuel-m-smith-ryan-hansen.srt",
+      "youtubeId": "IUU4BOt4wWo"
+    },
+    "nov26-sedi-ai": {
+      "label": "Samuel M. Smith, Utah SEDI Public Identity Utility (Mini Conference, 2 Nov 2026)",
+      "type": "talk",
+      "path": "confs/KERI/2026/nov/talks/2026-11-02-samuel-m-smith-2.srt",
+      "youtubeId": "96k4Is9xmMM"
+    },
+    "nov26-didwebs": {
+      "label": "Kent Bull, did:webs, why the 's' matters most (Mini Conference, 2 Nov 2026)",
+      "type": "talk",
+      "path": "confs/KERI/2026/nov/talks/2026-11-02-kent-bull.srt",
+      "youtubeId": "u7Np4oU2LLM"
+    },
+    "apr26-fhir": {
+      "label": "Jared Jefferey, FHIR and CMS (KERICONF26, April 2026)",
+      "type": "talk",
+      "path": "confs/KERI/2026/apr/talks/Jared Jefferey ｜ FHIR and CMS ｜ KERI Conference 2026.srt"
+    },
+    "may26-intro": {
+      "label": "Samuel Smith, Introduction to KERI Part 1 (May 2026)",
+      "type": "talk",
+      "path": "vids/2026/talks/2026-05-05-Introduction-to-KERI-Part-1-XYohZTh3yEw.srt"
+    },
+    "jul20-keynote": {
+      "label": "Samuel Smith, Nonconformist keynote (2 July 2020)",
+      "type": "talk",
+      "path": "vids/2020/talks/NonconformistKeynoteWeb20200702.srt"
+    },
+    "vids-index": {
+      "label": "KERI Foundation video archive index (vids/2024, vids/2026)",
+      "type": "site",
+      "path": "vids/2026/index.json"
+    },
+    "sedi25": {
+      "label": "State Endorsed Digital Identity Summit, UVU (November 2025), transcripts",
+      "type": "talk",
+      "path": "confs/SEDI/2025/nov/"
+    },
+    "slack": {
+      "label": "KERI Slack archive, May 2020 to Nov 2023",
+      "type": "text",
+      "path": "understanding-KERI/txt/slack-keri-archive.txt"
+    },
+    "papers": {
+      "label": "SmithSamuelM/Papers repository (scraped, citation lists)",
+      "type": "text",
+      "path": "understanding-KERI/txt/SmithSamuelM-Papers-master.txt"
+    },
+    "keridoc": {
+      "label": "KERI documentation site and glossary (scraped)",
+      "type": "text",
+      "path": "understanding-KERI/txt/keridoc.txt"
+    },
+    "gleif": {
+      "label": "GLEIF website and documents (scraped)",
+      "type": "text",
+      "path": "understanding-KERI/txt/gleif.txt"
+    },
+    "kf-site": {
+      "label": "keri.foundation website (scraped)",
+      "type": "text",
+      "path": "understanding-KERI/txt/keri-foundation.txt"
+    },
+    "kericonf-site": {
+      "label": "kericonf.com website (scraped)",
+      "type": "text",
+      "path": "understanding-KERI/txt/kericonf.txt"
+    }
+  },
+  "events": [
+    {
+      "id": "raet",
+      "date": "2013-01-01",
+      "display": "2013–2014",
+      "precision": "range",
+      "era": "search",
+      "category": "origins",
+      "importance": 3,
+      "status": "done",
+      "title": "RAET: everything solved except key management",
+      "summary": "Sam Smith writes RAET (Reliable Asynchronous Event Transport), an open-source, end-to-end encrypted and signed peer-to-peer protocol that ran in production at scale. The lesson he takes away: he could solve every problem but key management, and if key management is wrong nothing else matters.",
+      "quote": "I could solve all the problems but key management with RAET.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:20:25" },
+        { "source": "nov26-state", "at": "00:06:35" }
+      ]
+    },
+    {
+      "id": "open-reputation",
+      "date": "2015-05-13",
+      "display": "13 May 2015",
+      "precision": "day",
+      "era": "search",
+      "category": "papers",
+      "importance": 2,
+      "status": "done",
+      "title": "Open Reputation Framework",
+      "summary": "White paper using self-certifying identifiers, an identity ledger and an identity graph, with reputation as a modulator of trust online. It identifies persistent identity as the hard problem: a reputation needs something lasting to stick to, and nobody had a solution.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:21:15" },
+        { "source": "nov26-state", "at": "00:07:28" },
+        { "source": "papers", "note": "Cited as Open Reputation Framework, version 1.2, 2015/05/13." }
+      ]
+    },
+    {
+      "id": "user-managed-keys",
+      "date": "2015-06-01",
+      "display": "2015",
+      "precision": "year",
+      "era": "search",
+      "category": "origins",
+      "importance": 1,
+      "status": "done",
+      "title": "User-managed private keys become practical",
+      "summary": "Sam marks 2015 as the inflection point: phones with secure enclaves and the blockchain boom make it realistic for ordinary people to hold private keys, the precondition for everything KERI does. He describes KERI as the result of five years of trying to solve secure attribution and failing.",
+      "sources": [
+        { "source": "may26-intro", "at": "00:37:21" },
+        { "source": "apr26-state", "at": "00:12:01" }
+      ]
+    },
+    {
+      "id": "identity-system-essentials",
+      "date": "2016-03-29",
+      "display": "29 March 2016",
+      "precision": "day",
+      "era": "search",
+      "category": "papers",
+      "importance": 2,
+      "status": "done",
+      "title": "Identity System Essentials and self-sovereign identity",
+      "summary": "Paper with Dmitry Khovratovich introducing cryptonyms, a formal identity model, HD key chains and three degrees of privacy. Sam says it introduced the notion of self-sovereignty for identity, borrowed from Phil Windley's posts on self-sovereign data.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:21:53" },
+        { "source": "papers", "note": "Cited as Smith & Khovratovich, Identity System Essentials, 2016/03/29." }
+      ]
+    },
+    {
+      "id": "sovrin",
+      "date": "2016-09-01",
+      "display": "2016–2017",
+      "precision": "range",
+      "era": "search",
+      "category": "origins",
+      "importance": 2,
+      "status": "done",
+      "title": "Sovrin: one ledger for identity",
+      "summary": "Work with Evernym and the Sovrin Foundation on the path to perpetual identity. Sovrin gives persistent identifiers and preventive key rotation by keeping key state on a ledger, and exposes the next hard problem: shared governance.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:22:51" },
+        { "source": "nov26-state", "at": "00:08:07" }
+      ]
+    },
+    {
+      "id": "ledger-wars",
+      "date": "2017-01-01",
+      "display": "2017",
+      "precision": "year",
+      "era": "search",
+      "category": "origins",
+      "importance": 3,
+      "status": "done",
+      "title": "The ledger wars",
+      "summary": "Every ledger wants its own identity system, so every project starts with the question of which ledger to use. Interoperability and portability are lost. The insight after several years: blockchain is too centralized for truly portable identity.",
+      "quote": "I call it the era of the ledger wars. Everybody decided that digital identity based on blockchain was the coolest thing.",
+      "sources": [
+        { "source": "nov26-state", "at": "00:08:07" },
+        { "source": "apr26-state", "at": "00:23:54" }
+      ]
+    },
+    {
+      "id": "meta-platforms",
+      "date": "2018-04-25",
+      "display": "25 April 2018",
+      "precision": "day",
+      "era": "invention",
+      "category": "papers",
+      "importance": 1,
+      "status": "done",
+      "title": "Meta-platforms and network-of-network effects",
+      "summary": "White paper arguing that value which transfers across trust domains, such as reputation and identity, creates a meta network effect. It is the economic basis for the cooperative model the KERI Foundation later adopts for infrastructure.",
+      "sources": [
+        { "source": "keridoc", "note": "Cited as Meta-Platforms and Cooperative Network-of-Networks Effects, SelfRule, 2018/04/25." },
+        { "source": "nov26-state", "at": "00:29:55" }
+      ]
+    },
+    {
+      "id": "gdpr",
+      "date": "2018-05-01",
+      "display": "2018",
+      "precision": "year",
+      "era": "invention",
+      "category": "law",
+      "importance": 1,
+      "status": "done",
+      "title": "GDPR makes identity on a ledger a problem",
+      "summary": "Sam points to GDPR arriving in 2018 as the moment persistent identity on a shared ledger became legally difficult, adding pressure to find a ledger-less approach.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:24:28" }
+      ]
+    },
+    {
+      "id": "three-rs",
+      "date": "2018-06-01",
+      "display": "2018",
+      "precision": "year",
+      "era": "invention",
+      "category": "papers",
+      "importance": 3,
+      "status": "done",
+      "title": "Pre-rotation: the three R's of key management",
+      "summary": "The paper that opens the path. It defines pre-rotation, one-time-use rotation keys committed in advance, and introduces a log of key state with multisig. The log is not yet called a KEL because the name KERI does not exist yet. The goal is stated plainly: make key management fault tolerant.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:24:52" },
+        { "source": "nov26-state", "at": "00:09:40" }
+      ]
+    },
+    {
+      "id": "did-for-everything",
+      "date": "2018-09-26",
+      "display": "26 September 2018",
+      "precision": "day",
+      "era": "invention",
+      "category": "papers",
+      "importance": 2,
+      "status": "done",
+      "title": "A DID for Everything: the seed of ACDC",
+      "summary": "Rebooting the Web of Trust 7 paper introducing verifiable provenanced graphs of cryptographically chained data, the core idea that is now in the ACDC standard.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:27:01" },
+        { "source": "papers", "note": "Cited as Conway, Hughes, Ma et al., A DID for Everything, RWOT 7, 2018/09/26." }
+      ]
+    },
+    {
+      "id": "keri-wp-v1",
+      "date": "2019-07-03",
+      "display": "3 July 2019",
+      "precision": "day",
+      "era": "invention",
+      "category": "papers",
+      "importance": 3,
+      "status": "done",
+      "title": "KERI white paper, version 1",
+      "summary": "Key Event Receipt Infrastructure (KERI) Design and Build is published on arXiv (1907.02143). A cryptographically verifiable append-only event log per identifier, no shared governance, and with it CESR, key rotation, witnesses and the deconstructed blockchain. Core result: perpetual identity does not need a blockchain, a heretical idea at the time.",
+      "quote": "Lesson learned: we don't need a blockchain.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:27:21" },
+        { "source": "nov26-state", "at": "00:10:33" },
+        { "source": "papers", "note": "Cited as arXiv, 2019/07/03, arxiv.org/abs/1907.02143." }
+      ]
+    },
+    {
+      "id": "keri-wp-v2",
+      "date": "2020-04-22",
+      "display": "2020",
+      "precision": "year",
+      "era": "invention",
+      "category": "papers",
+      "importance": 3,
+      "status": "done",
+      "title": "KERI white paper, version 2: KERI as it is today",
+      "summary": "After a year on the road at IIW and other conferences collecting criticism, Sam revises the paper. Version 2 adds the watcher network, CESR streaming, hierarchical delegation and layered threshold structures. He says the core idea has changed little since.",
+      "note": "The white-paper repository cites a GitHub revision dated 2020/04/22; Sam only says 2020 and that the paper went through further small iterations over the following years.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:28:13" },
+        { "source": "nov26-state", "at": "00:10:33" },
+        { "source": "papers", "note": "Cited as Key Event Receipt Infrastructure (KERI) Design, GitHub, 2020/04/22." }
+      ]
+    },
+    {
+      "id": "slack-dif",
+      "date": "2020-05-11",
+      "display": "11 May 2020",
+      "precision": "day",
+      "era": "invention",
+      "category": "community",
+      "importance": 2,
+      "status": "done",
+      "title": "A developer community forms under DIF",
+      "summary": "The KERI Slack opens with Sam as first member. A week later the first JavaScript coding work (kerijs) starts while the Python reference implementation keripy is still in progress. KERI sits in the Decentralized Identity Foundation's Identity and Discovery working group.",
+      "sources": [
+        { "source": "slack", "note": "First messages 2020-05-11; kerijs work reported 2020-05-19." },
+        { "source": "keridoc", "note": "Q&A: KERI sat under DIF as part of the Identity and Discovery Workgroup." }
+      ]
+    },
+    {
+      "id": "nonconformist-keynote",
+      "date": "2020-07-02",
+      "display": "2 July 2020",
+      "precision": "day",
+      "era": "invention",
+      "category": "community",
+      "importance": 1,
+      "status": "done",
+      "title": "Nonconformist keynote on its and bits",
+      "summary": "Earliest talk in the video archive. Sam, introduced as the recently elected chairman of the board of the Sovrin Foundation, explains how value moved from capturing atoms to aggregating bits, the economic argument behind portable identity.",
+      "sources": [
+        { "source": "jul20-keynote", "at": "00:00:00" }
+      ]
+    },
+    {
+      "id": "quantum-secure-dids",
+      "date": "2020-07-09",
+      "display": "9 July 2020",
+      "precision": "day",
+      "era": "invention",
+      "category": "papers",
+      "importance": 2,
+      "status": "done",
+      "title": "Quantum Secure DIDs",
+      "summary": "Paper with Carsten Stöcker and Juan Caballero. Because pre-rotated keys are hidden behind hashes, KERI identifiers are pre-migrated: an existing identifier is protected against a surprise quantum attack and can move to post-quantum cryptography later.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:29:11" },
+        { "source": "nov26-state", "at": "00:11:10" },
+        { "source": "keridoc", "note": "Cited as Stocker, Smith and Caballero, Quantum Secure DIDs, RWOT10, 2020/07/09." }
+      ]
+    },
+    {
+      "id": "universal-identifier-theory",
+      "date": "2020-10-23",
+      "display": "23 October 2020",
+      "precision": "day",
+      "era": "invention",
+      "category": "papers",
+      "importance": 2,
+      "status": "done",
+      "title": "Universal Identifier Theory",
+      "summary": "Extends the identity model into a unified theory of identifiers: bootstrapping trust, reputation by reference and multi-valent key management. It describes how KERI solves organizational identity and how to build infrastructure at scale.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:30:09" },
+        { "source": "nov26-state", "at": "00:11:58" },
+        { "source": "papers", "note": "Cited as Universal Identifier Theory, 2020-10-23." }
+      ]
+    },
+    {
+      "id": "gleif-adopts",
+      "date": "2020-11-01",
+      "display": "Late 2020",
+      "precision": "approx",
+      "era": "invention",
+      "category": "adoption",
+      "importance": 3,
+      "status": "done",
+      "title": "GLEIF chooses KERI",
+      "summary": "GLEIF, tired of the ledger wars and wanting a ledger-agnostic approach, becomes the early adopter and starts work on the verifiable LEI. It gives KERI an organizational root of trust that later enables telecom and healthcare adoption. According to the Slack archive, GLEIF had studied blockchain, met Timothy Ruff at a Hyperledger Global Forum and then contacted Sam.",
+      "quote": "2020, GLEIF got religion. They said, this works. We don't like the ledger wars.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:29:31" },
+        { "source": "nov26-state", "at": "00:11:58" },
+        { "source": "slack", "note": "Origin story told on 2022-07-27." }
+      ]
+    },
+    {
+      "id": "toip-acdc-tf",
+      "date": "2020-12-01",
+      "display": "2020",
+      "precision": "year",
+      "era": "invention",
+      "category": "specs",
+      "importance": 2,
+      "status": "done",
+      "title": "ToIP task force: ACDC becomes a thing",
+      "summary": "A task force is formed at the Trust over IP Foundation to start standardizing the work. Authentic Chained Data Containers get their name and a home. Sam counts the road to final Linux Foundation standards from this point.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:30:24" },
+        { "source": "nov26-state", "at": "00:12:10" }
+      ]
+    },
+    {
+      "id": "weboftrust",
+      "date": "2021-06-11",
+      "display": "June 2021",
+      "precision": "month",
+      "era": "production",
+      "category": "community",
+      "importance": 2,
+      "status": "done",
+      "title": "From DIF to the WebOfTrust repositories",
+      "summary": "Activity outgrows the shared DIF working group. In June 2021 the WebOfTrust GitHub repositories did-keri, keri-ietf-spec and kids appear in the Slack, and KERI's code and specs settle there under Apache 2.0 with an outgoing equals incoming contribution policy.",
+      "sources": [
+        { "source": "slack", "note": "GitHub subscriptions to WebOfTrust repos on 2021-06-11; licensing policy explained 2022-10-14." },
+        { "source": "keridoc", "note": "Sam Smith, May 2024: KERI sat under DIF until mid 2021." }
+      ]
+    },
+    {
+      "id": "ietf-drafts",
+      "date": "2021-07-12",
+      "display": "July 2021",
+      "precision": "month",
+      "era": "production",
+      "category": "specs",
+      "importance": 2,
+      "status": "done",
+      "title": "Specifications move to IETF-draft form",
+      "summary": "First pull requests land in WebOfTrust/keri-ietf-spec. The earlier KERI Improvement Docs (KIDs) quickly feel out of date and by September 2022 are abandoned in favour of IETF drafts for KERI, CESR, ACDC, SAID, IPEX and PTEL.",
+      "sources": [
+        { "source": "slack", "note": "First keri-ietf-spec PR 2021-07-12; KIDs abandoned per message of 2022-09-01." }
+      ]
+    },
+    {
+      "id": "keripy-hardening",
+      "date": "2022-03-03",
+      "display": "March 2022",
+      "precision": "month",
+      "era": "production",
+      "category": "code",
+      "importance": 1,
+      "status": "done",
+      "title": "KERIpy hardened for production vLEI",
+      "summary": "Preparing for the vLEI ecosystem, the team reworks rotation for distributed multisig identifiers so that a subset of signers satisfying the threshold can rotate (partial rotation).",
+      "sources": [
+        { "source": "slack", "note": "Message of 2022-03-03." }
+      ]
+    },
+    {
+      "id": "xbrl-pilot",
+      "date": "2022-06-30",
+      "display": "30 June 2022",
+      "precision": "day",
+      "era": "production",
+      "category": "adoption",
+      "importance": 2,
+      "status": "done",
+      "title": "vLEI XBRL annual report signing pilot",
+      "summary": "The keripy team completes the pilot in which an annual report is signed with vLEI credentials. Afterwards keripy gets a stable main branch and a separate development branch.",
+      "sources": [
+        { "source": "slack", "note": "Message of 2022-06-30." }
+      ]
+    },
+    {
+      "id": "cesrox",
+      "date": "2022-09-01",
+      "display": "1 September 2022",
+      "precision": "day",
+      "era": "production",
+      "category": "code",
+      "importance": 1,
+      "status": "done",
+      "title": "CESRox: a Rust implementation starts",
+      "summary": "First community meeting for CESRox, started after CESR was named at IIW as hard to adopt. A dispute over Apache 2.0 versus EUPL licensing with the Human Colossus Foundation follows in December 2022 and is settled in favour of Apache 2.0 for the WebOfTrust repositories.",
+      "sources": [
+        { "source": "slack", "note": "Meeting planned 2022-08-29 for that Thursday; licensing thread 2022-12-14 to 2023-01-05." }
+      ]
+    },
+    {
+      "id": "iiw35",
+      "date": "2022-11-14",
+      "display": "November 2022",
+      "precision": "month",
+      "era": "production",
+      "category": "code",
+      "importance": 1,
+      "status": "done",
+      "title": "IIW 35: did:keri resolver and the name Signify",
+      "summary": "A first did:keri DID method resolver is shared with the IIW crowd, and Signify is coined as the new name for SKWA (simple KERI for web auth), the idea of signing at the edge.",
+      "sources": [
+        { "source": "slack", "note": "did:keri resolver 2022-11-14; Signify name 2022-11-18." }
+      ]
+    },
+    {
+      "id": "vlei-production",
+      "date": "2022-12-06",
+      "display": "December 2022",
+      "precision": "month",
+      "era": "production",
+      "category": "adoption",
+      "importance": 3,
+      "status": "done",
+      "title": "GLEIF vLEI goes into production",
+      "summary": "The first production deployment of KERI and ACDC. GLEIF's production witnesses are live by the end of November, the vLEI Issuer Qualification Agreement v1.0 is dated 6 December, and GLEIF works with Provenant to stand up the vLEI. GLEIF's own history lists the qualification of the first vLEI issuer in this period.",
+      "quote": "They went to production with the vLEI in 2022. Seems like it was yesterday.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:07:45" },
+        { "source": "nov26-state", "at": "00:12:20" },
+        { "source": "slack", "note": "Production witnesses 2022-11-30; Provenant 2022-12-08." },
+        { "source": "gleif", "note": "vLEI Issuer Qualification Agreement v1.0, 2022-12-06." }
+      ]
+    },
+    {
+      "id": "cardano-backer",
+      "date": "2022-12-29",
+      "display": "29 December 2022",
+      "precision": "day",
+      "era": "production",
+      "category": "code",
+      "importance": 1,
+      "status": "done",
+      "title": "First Cardano integration",
+      "summary": "A Cardano registrar backer is submitted to keripy as work in progress, the first sign of the Cardano ecosystem's involvement.",
+      "sources": [
+        { "source": "slack", "note": "Message of 2022-12-29." }
+      ]
+    },
+    {
+      "id": "keria-signify",
+      "date": "2023-03-13",
+      "display": "March 2023",
+      "precision": "month",
+      "era": "widening",
+      "category": "code",
+      "importance": 3,
+      "status": "done",
+      "title": "KERIA and Signify",
+      "summary": "The old agent is replaced by a KERIA cloud agent with a Signify client that keeps keys and event signing at the edge. This architecture becomes the base for most later wallets and products.",
+      "sources": [
+        { "source": "slack", "note": "First described 2023-03-13." }
+      ]
+    },
+    {
+      "id": "early-adopters",
+      "date": "2023-04-28",
+      "display": "April 2023",
+      "precision": "month",
+      "era": "widening",
+      "category": "adoption",
+      "importance": 1,
+      "status": "done",
+      "title": "Who uses KERI in spring 2023",
+      "summary": "A snapshot from the Slack: GLEIF (first in the world), Provenant (telecom), Qui Identity (mobile wallets), the Human Colossus Foundation in the EU and RootsID with a Cardano integration.",
+      "sources": [
+        { "source": "slack", "note": "Message of 2023-04-28." }
+      ]
+    },
+    {
+      "id": "spac",
+      "date": "2023-06-01",
+      "display": "2023",
+      "precision": "year",
+      "era": "widening",
+      "category": "papers",
+      "importance": 2,
+      "status": "done",
+      "title": "SPAC: the missing privacy story",
+      "summary": "KERI covers authentication; the SPAC white paper (Secure Privacy, Authenticity and Confidentiality) adds layered confidential contexts to counter metadata surveillance. It becomes the basis of the Trust Spanning Protocol at ToIP, co-authored with Wenjing Chu.",
+      "quote": "The real question is how do we protect people from being exploited, not how do we help people hide better.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:31:27" },
+        { "source": "nov26-state", "at": "00:12:20" }
+      ]
+    },
+    {
+      "id": "utah-privacy-commission",
+      "date": "2023-07-01",
+      "display": "2023",
+      "precision": "year",
+      "era": "widening",
+      "category": "law",
+      "importance": 3,
+      "status": "done",
+      "title": "Utah work begins",
+      "summary": "Sam is appointed to the Utah State Privacy Commission and the three-year effort towards state-endorsed digital identity (SEDI) starts. His Sustainable Privacy white paper of the same year argues that technology alone cannot protect people and introduces the fiduciary duty of data loyalty.",
+      "sources": [
+        { "source": "nov26-state", "at": "00:12:49" },
+        { "source": "apr26-state", "at": "00:33:31" }
+      ]
+    },
+    {
+      "id": "didwebs-start",
+      "date": "2023-08-28",
+      "display": "August 2023",
+      "precision": "month",
+      "era": "widening",
+      "category": "specs",
+      "importance": 2,
+      "status": "done",
+      "title": "did:webs work starts at ToIP",
+      "summary": "In June 2023 the production GLEIF root of trust is shown as a did:web document generated live from its key event log. By August GLEIF and others are working on the ToIP did:webs specification, with a reference resolver targeted at the fall 2023 IIW.",
+      "sources": [
+        { "source": "slack", "note": "GLEIF root as did:web 2023-06-07; did:webs spec work 2023-08-28." }
+      ]
+    },
+    {
+      "id": "toip-keri-wg",
+      "date": "2024-01-01",
+      "display": "2023–2024",
+      "precision": "approx",
+      "era": "widening",
+      "category": "specs",
+      "importance": 2,
+      "status": "done",
+      "title": "ToIP KERI Suite Working Group",
+      "summary": "The KERI Suite gets its own working group at Trust over IP to finalize the specifications. The code base had existed for several years before the standards track started, so the specs absorb lessons already learned.",
+      "note": "Sam places this after his 2023 items and before 2025 without naming a year.",
+      "sources": [
+        { "source": "nov26-state", "at": "00:13:43" },
+        { "source": "apr26-state", "at": "00:34:07" },
+        { "source": "nov26-didwebs", "at": "00:02:06" }
+      ]
+    },
+    {
+      "id": "cardano-foundation",
+      "date": "2024-02-01",
+      "display": "2023–2024",
+      "precision": "approx",
+      "era": "widening",
+      "category": "adoption",
+      "importance": 2,
+      "status": "done",
+      "title": "Cardano Foundation invests in KERI",
+      "summary": "The Cardano Foundation adopts KERI and makes a big investment in open-source software. Its identity work is later spun off as Veridian, an open-source wallet and identity solution on KERI and ACDC, and a gold sponsor of KERICONF26.",
+      "note": "Sam gives no year; listed alongside the ToIP working group.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:34:07" },
+        { "source": "nov26-state", "at": "00:13:43" },
+        { "source": "kericonf-site" }
+      ]
+    },
+    {
+      "id": "intro-video-2024",
+      "date": "2024-01-02",
+      "display": "January 2024",
+      "precision": "month",
+      "era": "widening",
+      "category": "community",
+      "importance": 1,
+      "status": "done",
+      "title": "Introduction to KERI video",
+      "summary": "Short introduction by Sam Smith, later subtitled in Dutch, German, Spanish, French and Portuguese for the foundation's archive.",
+      "sources": [
+        { "source": "vids-index", "note": "vids/2024/index.json." }
+      ]
+    },
+    {
+      "id": "iso-17442-3",
+      "date": "2024-06-01",
+      "display": "2024",
+      "precision": "year",
+      "era": "widening",
+      "category": "specs",
+      "importance": 2,
+      "status": "done",
+      "title": "ISO 17442-3 standardizes the vLEI",
+      "summary": "A third part of the LEI standard defines and standardizes vLEIs as digital credentials across the global LEI ecosystem.",
+      "sources": [
+        { "source": "gleif" }
+      ]
+    },
+    {
+      "id": "keri-foundation",
+      "date": "2024-12-02",
+      "display": "2 December 2024",
+      "precision": "day",
+      "era": "widening",
+      "category": "community",
+      "importance": 3,
+      "status": "done",
+      "title": "KERI Foundation established",
+      "summary": "After a European and Swiss initiative following DICE 2024 is merged with the core team's plans, the foundation is set up as an L3C with an operating agreement and memorandum of understanding, with Henk van Cann as founding chairman and Sam Smith in a lead role. Its mission: foster open infrastructure, the I in KERI. It is ready to accept donors from March 2025.",
+      "note": "Sources disagree on the year. In April 2026 Sam corrects himself to 2024-12-02 and the foundation site says the legal structure was set up by the end of 2024. In November 2026 he says it was founded in 2025. Read as: established December 2024, operational in 2025.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:34:26" },
+        { "source": "nov26-state", "at": "00:14:23" },
+        { "source": "kf-site" }
+      ]
+    },
+    {
+      "id": "sb260",
+      "date": "2025-03-15",
+      "display": "Spring 2025",
+      "precision": "approx",
+      "era": "widening",
+      "category": "law",
+      "importance": 3,
+      "status": "done",
+      "title": "Utah SB 260: the first SEDI bill",
+      "summary": "Senate Bill 260 passes both houses unanimously and is signed by Governor Cox. It puts state-endorsed digital identity in the Utah code on the principle that identity belongs to the person and the state only endorses it, and tasks the Department of Government Operations with returning to the legislature with a concrete proposal.",
+      "sources": [
+        { "source": "sedi25", "note": "Speakers at the November 2025 summit: sponsored this last session, signed into law earlier this spring." },
+        { "source": "nov26-state", "at": "00:14:23" }
+      ]
+    },
+    {
+      "id": "kfmca",
+      "date": "2025-10-28",
+      "display": "October 2025",
+      "precision": "month",
+      "era": "widening",
+      "category": "community",
+      "importance": 1,
+      "status": "done",
+      "title": "Market & Community Advisory meetings",
+      "summary": "The foundation's monthly open Zoom meetings are on record from October 2025: the DKMS Alliance on bridging worlds, then in November the Cardano Foundation on Veridian's SEDI reference implementation, continuing through 2026.",
+      "sources": [
+        { "source": "kf-site" }
+      ]
+    },
+    {
+      "id": "sedi-summit-2025",
+      "date": "2025-11-15",
+      "display": "November 2025",
+      "precision": "month",
+      "era": "widening",
+      "category": "law",
+      "importance": 2,
+      "status": "done",
+      "title": "SEDI Summit at Utah Valley University",
+      "summary": "Legislators, the state's privacy office, civil-liberties groups and identity technologists present and demo how SEDI could work. No technology has been chosen yet at this point.",
+      "sources": [
+        { "source": "sedi25" }
+      ]
+    },
+    {
+      "id": "kf-team",
+      "date": "2026-01-05",
+      "display": "January 2026",
+      "precision": "month",
+      "era": "infrastructure",
+      "category": "community",
+      "importance": 3,
+      "status": "done",
+      "title": "Funded team starts building open infrastructure",
+      "summary": "With private and public funding, including a grant from the Utah Governor's Office of Economic Opportunity to build a digital identity utility for SEDI on KERI, a KERI Foundation engineering team starts in January on the 5 W's: wallet, witness, watcher, web and wizard.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:01:59" },
+        { "source": "apr26-state", "at": "00:38:14" },
+        { "source": "nov26-state", "at": "00:01:44" }
+      ]
+    },
+    {
+      "id": "specs-v1",
+      "date": "2026-01-21",
+      "display": "21 January 2026",
+      "precision": "day",
+      "era": "infrastructure",
+      "category": "specs",
+      "importance": 3,
+      "status": "done",
+      "title": "KERI, ACDC and CESR v1.0 approved",
+      "summary": "The Trust over IP Steering Committee approves the KERI, ACDC and CESR specifications at version 1.0, released as Linux Foundation open standards. Sam calls it the end of a multi-year process that started in 2020.",
+      "sources": [
+        { "source": "kf-site", "note": "On January 21, 2026, the ToIP Steering Committee approved three specifications." },
+        { "source": "apr26-state", "at": "00:01:22" },
+        { "source": "nov26-state", "at": "00:01:44" }
+      ]
+    },
+    {
+      "id": "healthkeri-donation",
+      "date": "2026-02-01",
+      "display": "Early 2026",
+      "precision": "approx",
+      "era": "infrastructure",
+      "category": "code",
+      "importance": 2,
+      "status": "done",
+      "title": "healthKERI donates wallet, witness and watcher",
+      "summary": "healthKERI donates its Locksmith wallet and its witness and watcher code to the foundation, which rebrands them so anyone can build on production-quality infrastructure.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:43:22" },
+        { "source": "nov26-5w", "at": "00:13:53" }
+      ]
+    },
+    {
+      "id": "sedi-law-2026",
+      "date": "2026-03-01",
+      "display": "Early 2026",
+      "precision": "approx",
+      "era": "infrastructure",
+      "category": "law",
+      "importance": 3,
+      "status": "done",
+      "title": "Utah passes funded SEDI implementation law",
+      "summary": "Utah passes and funds the law to actually build SEDI, including a duty of data loyalty that turns consumer-harm protection into a fiduciary standard. It gives KERI a personal root of trust next to GLEIF's organizational one. The 2026 legislation authorizes a narrow first scope with guardianship as the driver.",
+      "note": "In November 2026 Sam refers to this as Senate Bill 260, but the November 2025 summit transcripts show SB 260 was signed in spring 2025. The bill number of the 2026 law is not in the corpus.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:02:23" },
+        { "source": "apr26-state", "at": "00:15:33" },
+        { "source": "nov26-state", "at": "00:03:27" },
+        { "source": "nov26-sedi-ai", "at": "00:35:49" }
+      ]
+    },
+    {
+      "id": "kericonf26",
+      "date": "2026-04-21",
+      "display": "21–23 April 2026",
+      "precision": "day",
+      "era": "infrastructure",
+      "category": "community",
+      "importance": 3,
+      "status": "done",
+      "title": "First KERI Conference",
+      "summary": "KERICONF26 in Lehi, Utah, directly after a two-day SEDI policy summit: two days, multiple tracks, 42 recorded sessions, themed around the I of KERI. Sam gives the history talk this timeline draws on and predicts the adoption tipping point before the end of 2027.",
+      "quote": "Get a t-shirt, because there'll never be another first-ever KERI Conference.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:00:43" },
+        { "source": "kericonf-site" }
+      ]
+    },
+    {
+      "id": "telecom-ovc",
+      "date": "2026-06-01",
+      "display": "2026",
+      "precision": "year",
+      "era": "infrastructure",
+      "category": "adoption",
+      "importance": 3,
+      "status": "done",
+      "title": "Telecom: verifiable calls against spam",
+      "summary": "The Open Verifiable Communications Alliance uses KERI and ACDC to stop call spam. In April it is at proof-of-concept stage; by November Sam calls it functionally in production, with Microsoft publicly announcing use of a stack developed by Provenant. Text messaging is next.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:02:23" },
+        { "source": "nov26-state", "at": "00:02:35" }
+      ]
+    },
+    {
+      "id": "healthcare",
+      "date": "2026-06-02",
+      "display": "2026",
+      "precision": "year",
+      "era": "infrastructure",
+      "category": "adoption",
+      "importance": 2,
+      "status": "done",
+      "title": "Healthcare: DirectTrust and the vLEI",
+      "summary": "DirectTrust, which accredits health information service providers, is set to become a vLEI qualification agent, extending GLEIF's root of trust into the largest market sector in the United States. Pilots connect large payers; the January 2027 CMS deadline for payer-to-payer exchange drives the timing.",
+      "sources": [
+        { "source": "nov26-state", "at": "00:04:14" },
+        { "source": "apr26-state", "at": "00:02:46" }
+      ]
+    },
+    {
+      "id": "videos-2026",
+      "date": "2026-07-01",
+      "display": "May–July 2026",
+      "precision": "range",
+      "era": "infrastructure",
+      "category": "community",
+      "importance": 1,
+      "status": "done",
+      "title": "It's KERI or Surveillance",
+      "summary": "Two new recorded talks by Sam Smith join the archive: Introduction to KERI Part 1 (May) and It's KERI or Surveillance (July), framing AI-driven continuous identity as the alternative to key management.",
+      "sources": [
+        { "source": "vids-index" }
+      ]
+    },
+    {
+      "id": "didwebs-baseline",
+      "date": "2026-08-11",
+      "display": "August 2026",
+      "precision": "month",
+      "era": "infrastructure",
+      "category": "specs",
+      "importance": 2,
+      "status": "done",
+      "title": "did:webs nears a normative baseline",
+      "summary": "The did:webs spec stands at version 0.10.3 with about 17 open items and a normative baseline around 11 August. It works end to end with KERI and ACDC version 1; support for spec version 1.1 (the keripy main branch, informally KERI 2) is still to do. A second, TypeScript implementation is under way to qualify as a DIF recommended DID method.",
+      "sources": [
+        { "source": "nov26-didwebs", "at": "00:41:12" },
+        { "source": "nov26-didwebs", "at": "00:01:28" },
+        { "source": "nov26-didwebs", "at": "00:50:19" }
+      ]
+    },
+    {
+      "id": "miniconf",
+      "date": "2026-11-02",
+      "display": "2 November 2026",
+      "precision": "day",
+      "era": "infrastructure",
+      "category": "community",
+      "importance": 3,
+      "status": "done",
+      "title": "KERI Mini Conference and open infrastructure release",
+      "summary": "One day, one track in California. The foundation reports open-source witnesses, watchers and wallets released under github.com/keri-foundation: Locksmith (desktop wallet), Fortweb (browser), FortiOS (mobile), kf-boot (onboarding), witness-hk and watcher-hk. Registrars and observers are next. The Trust Spanning Protocol is in final draft and has been voted on, the fourth spec of the suite.",
+      "quote": "2026, we think, is a milestone year for KERI and ACDC and the KERI suite of standards.",
+      "sources": [
+        { "source": "nov26-state", "at": "00:01:44" },
+        { "source": "nov26-state", "at": "00:12:49" },
+        { "source": "nov26-5w", "at": "00:13:00" },
+        { "source": "kericonf-site" }
+      ]
+    },
+    {
+      "id": "sedi-summit-2026",
+      "date": "2026-11-16",
+      "display": "Mid-November 2026",
+      "precision": "approx",
+      "era": "infrastructure",
+      "category": "outlook",
+      "importance": 2,
+      "status": "expected",
+      "title": "Fall SEDI Summit and multi-state consortium",
+      "summary": "Announced at the mini conference as two weeks away: a fall SEDI Summit in Utah with about 250 participants, where several states are expected to announce they are joining a multi-state SEDI consortium.",
+      "sources": [
+        { "source": "nov26-state", "at": "00:05:46" }
+      ]
+    },
+    {
+      "id": "cms-deadline",
+      "date": "2027-01-01",
+      "display": "1 January 2027",
+      "precision": "day",
+      "era": "infrastructure",
+      "category": "outlook",
+      "importance": 1,
+      "status": "forecast",
+      "title": "CMS-0057 deadline",
+      "summary": "Every US payer receiving Medicare and Medicaid funds must have FHIR APIs in place, including payer-to-payer exchange. Healthcare speakers at KERICONF26 name it as the forcing function for KERI-based provenance in that sector.",
+      "sources": [
+        { "source": "apr26-fhir", "at": "00:28:21" }
+      ]
+    },
+    {
+      "id": "tipping-point",
+      "date": "2027-12-31",
+      "display": "By end of 2027",
+      "precision": "approx",
+      "era": "infrastructure",
+      "category": "outlook",
+      "importance": 2,
+      "status": "forecast",
+      "title": "Sam's prediction: the adoption tipping point",
+      "summary": "Using Gladwell's three rules (the law of the few, stickiness, the power of context), Sam argues that three adoption vectors, telecom, healthcare and state entitlements, plus the pressure of AI-driven fraud make broad adoption a matter of when.",
+      "quote": "I'm going to predict that before the end of 2027, KERI adoption will reach its tipping point.",
+      "sources": [
+        { "source": "apr26-state", "at": "00:19:19" }
+      ]
+    }
+  ]
+}
