@@ -717,11 +717,85 @@
             color: var(--soft);
         }
 
+        /* ---------- Contribute ---------- */
+        .contribute {
+            margin: 56px 0 0;
+            padding: 28px 28px 26px;
+            background: var(--ink);
+            color: var(--on-ink);
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px 32px;
+        }
+
+        .contribute h2 {
+            font-family: var(--heading-font);
+            font-weight: 800;
+            font-size: clamp(22px, 3vw, 28px);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin: 0 0 8px;
+            color: var(--on-ink);
+        }
+
+        .contribute p {
+            margin: 0;
+            max-width: 34em;
+            color: color-mix(in srgb, var(--on-ink) 82%, transparent);
+            font-size: 15px;
+        }
+
+        .contribute code {
+            background: color-mix(in srgb, var(--on-ink) 14%, transparent);
+            color: var(--on-ink);
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+
+        .contribute-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+            font-family: var(--heading-font);
+            font-weight: 700;
+            font-size: 15px;
+            letter-spacing: 0.01em;
+            text-decoration: none;
+            color: var(--ink);
+            background: var(--speaker);
+            border: 0;
+            border-radius: 8px;
+            padding: 14px 20px;
+            transition: background 0.15s ease, transform 0.15s ease;
+        }
+
+        .contribute-action:hover,
+        .contribute-action:focus-visible {
+            color: var(--ink);
+            background: var(--hover);
+            outline: none;
+        }
+
+        .contribute-action:focus-visible {
+            outline: 2px solid var(--speaker);
+            outline-offset: 3px;
+        }
+
+        .contribute-action svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
         /* ---------- Footer ---------- */
         footer {
             position: relative;
             z-index: 0;
-            margin-top: 72px;
+            margin-top: 40px;
             padding: 30px 0 120px;
             border-top: 2px solid var(--ink);
             font-size: 14px;
@@ -820,6 +894,15 @@
 
             .brand img {
                 width: 56px;
+            }
+
+            .contribute {
+                padding: 22px 18px 20px;
+            }
+
+            .contribute-action {
+                width: 100%;
+                justify-content: center;
             }
 
             footer {
@@ -984,6 +1067,22 @@
     <main class="wrap" id="timeline"></main>
 
     <div class="wrap">
+        <aside class="contribute" aria-labelledby="contribute-title">
+            <div>
+                <h2 id="contribute-title">Spot something missing?</h2>
+                <p>Add or correct an entry in <code>timeline.json</code> and open a pull request.</p>
+            </div>
+            <a class="contribute-action"
+                href="https://github.com/kordwarshuis/KERI-timeline/edit/main/timeline.json"
+                target="_blank" rel="noopener">
+                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                    <path fill="currentColor"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+                Edit on GitHub
+            </a>
+        </aside>
+
         <footer>
             <h2>About this timeline</h2>
             <p id="scope"></p>
@@ -991,10 +1090,6 @@
                 published. Where sources disagree or a date is inferred, the entry carries a dating note.</p>
             <ul id="source-list"></ul>
             <p>Data: <a href="timeline.json">timeline.json</a> <span id="compiled"></span></p>
-            <p>To add or correct an entry,
-                <a href="https://github.com/kordwarshuis/KERI-timeline/edit/main/timeline.json" target="_blank"
-                    rel="noopener">edit timeline.json on GitHub</a>
-                and open a pull request.</p>
             <a class="footer-brand" href="https://keri.foundation/">
                 <img src="assets/img/logo-keri-foundation-color-transparent.png" width="36" height="29"
                     alt="">
