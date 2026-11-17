@@ -69,56 +69,61 @@
       "label": "Samuel M. Smith, The state and the future of the KERI Suite (Mini Conference, 2 Nov 2026)",
       "type": "talk",
       "path": "confs/KERI/2026/nov/talks/2026-11-02-samuel-m-smith-1.srt",
-      "youtubeId": "KMieUSLQ4WA"
+      "url": "https://keri.foundation/confs/KERI/2026/nov/#samuel-m-smith-the-state-and-the-future-of-the-keri-suite"
     },
     "apr26-state": {
       "label": "Samuel Smith, State of the KERI Suite (KERICONF26, April 2026)",
       "type": "talk",
       "path": "confs/KERI/2026/apr/talks/Samuel Smith ｜ State of the KERI Suite ｜ KERI Conference 2026.srt",
-      "youtubeId": "S5MRx_fszOI"
+      "url": "https://keri.foundation/confs/KERI/2026/apr/#state-of-the-keri-suite-samuel-smith"
     },
     "nov26-5w": {
       "label": "Samuel M. Smith & Ryan Hansen, Progress report: the 5 W's of KERI (Mini Conference, 2 Nov 2026)",
       "type": "talk",
       "path": "confs/KERI/2026/nov/talks/2026-11-02-samuel-m-smith-ryan-hansen.srt",
-      "youtubeId": "IUU4BOt4wWo"
+      "url": "https://keri.foundation/confs/KERI/2026/nov/#samuel-m-smith-ryan-hansen-progress-report-the-5w-s-of-keri-witnesses-watchers-wallet-web-and-wizard-plus-bulk-issuances-and-anchoring-in-merkle-trees"
     },
     "nov26-sedi-ai": {
       "label": "Samuel M. Smith, Utah SEDI Public Identity Utility (Mini Conference, 2 Nov 2026)",
       "type": "talk",
       "path": "confs/KERI/2026/nov/talks/2026-11-02-samuel-m-smith-2.srt",
-      "youtubeId": "96k4Is9xmMM"
+      "url": "https://keri.foundation/confs/KERI/2026/nov/#samuel-m-smith-utah-sedi-public-identity-utility-as-bootstrap-for-ai-agent-surveillance-protection-with-keri"
     },
     "nov26-didwebs": {
       "label": "Kent Bull, did:webs, why the 's' matters most (Mini Conference, 2 Nov 2026)",
       "type": "talk",
       "path": "confs/KERI/2026/nov/talks/2026-11-02-kent-bull.srt",
-      "youtubeId": "u7Np4oU2LLM"
+      "url": "https://keri.foundation/confs/KERI/2026/nov/#kent-bull-did-webs-why-the-s-matters-most"
     },
     "apr26-fhir": {
       "label": "Jared Jefferey, FHIR and CMS (KERICONF26, April 2026)",
       "type": "talk",
-      "path": "confs/KERI/2026/apr/talks/Jared Jefferey ｜ FHIR and CMS ｜ KERI Conference 2026.srt"
+      "path": "confs/KERI/2026/apr/talks/Jared Jefferey ｜ FHIR and CMS ｜ KERI Conference 2026.srt",
+      "url": "https://keri.foundation/confs/KERI/2026/apr/#fhir-and-cms-jared-jefferey"
     },
     "may26-intro": {
       "label": "Samuel Smith, Introduction to KERI Part 1 (May 2026)",
       "type": "talk",
-      "path": "vids/2026/talks/2026-05-05-Introduction-to-KERI-Part-1-XYohZTh3yEw.srt"
+      "path": "vids/2026/talks/2026-05-05-Introduction-to-KERI-Part-1-XYohZTh3yEw.srt",
+      "url": "https://keri.foundation/vids/2026/#introduction-to-keri-part-1-samuel-smith"
     },
     "jul20-keynote": {
       "label": "Samuel Smith, Nonconformist keynote (2 July 2020)",
       "type": "talk",
-      "path": "vids/2020/talks/NonconformistKeynoteWeb20200702.srt"
+      "path": "vids/2020/talks/NonconformistKeynoteWeb20200702.srt",
+      "url": "https://keri.foundation/vids/2020/#nonconformist-keynote-samuel-smith"
     },
     "vids-index": {
       "label": "KERI Foundation video archive index (vids/2024, vids/2026)",
       "type": "site",
-      "path": "vids/2026/index.json"
+      "path": "vids/2026/index.json",
+      "url": "https://keri.foundation/vids/"
     },
     "sedi25": {
       "label": "State Endorsed Digital Identity Summit, UVU (November 2025), transcripts",
       "type": "talk",
-      "path": "confs/SEDI/2025/nov/"
+      "path": "confs/SEDI/2025/nov/",
+      "url": "https://keri.foundation/confs/SEDI/2025/nov/"
     },
     "slack": {
       "label": "KERI Slack archive, May 2020 to Nov 2023",
